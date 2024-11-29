@@ -1,0 +1,16 @@
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: gabe-bucket-26
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0dbd9c83830eecdb7
+      NetworkInterfaces:
+       - AssociatePublicIpAddress: true
+         DeviceIndex: 0
+         SubnetId: subnet-0d6b8790bf5ec5629 # Replace with your subnet ID
+         GroupSet:
+           - sg-01c8a4bcda66dc100
